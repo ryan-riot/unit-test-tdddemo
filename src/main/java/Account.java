@@ -10,6 +10,9 @@ public class Account {
     }
 
     public void withDraw(int money) {
+        if(money > balance) {
+            throw new IllegalArgumentException("미쳤냐? 돈도 잔액부터 확인해라!!");
+        }
         this.balance -= money;
     }
 }
