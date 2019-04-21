@@ -8,4 +8,8 @@ public class Account {
     public void addBalance(int money) {
         this.balance += money;
     }
+
+    public void withDraw(int money) {
+        this.balance -= money;
+    }
 }
