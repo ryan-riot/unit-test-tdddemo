@@ -4,4 +4,8 @@ public class Account {
     public int getBalance() {
         return balance;
     }
+
+    public void addBalance(int money) {
+        this.balance += money;
+    }
 }
