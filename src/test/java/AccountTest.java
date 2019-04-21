@@ -11,6 +11,5 @@ public class AccountTest {
 
         int balance = account.getBalance();
         assertThat(balance, is(0));
-
     }
 }
