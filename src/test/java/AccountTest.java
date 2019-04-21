@@ -27,4 +27,13 @@ public class AccountTest {
         account.withDraw(500);
         assertThat(account.getBalance(), is(500));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void 만약잔액보다_많은금액을_출금하면_Exception발생(){
+        Account account = new Account();
+        account.addBalance(3000);
+        account.withDraw(4000);
+
+        assertThat(account.getBalance(), is(-1000));
+    }
 }
