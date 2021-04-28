@@ -5,39 +5,13 @@ import static org.junit.Assert.assertThat;
 
 public class AccountTest {
 
-    @Test
-    public void shouldBalanceIsZeroForNewAccount() throws Exception {
-        Account account = new Account();
-        if ( account == null ) {
-            throw new Exception("계좌 생성  실패");
-        }
-        int balance = account.getBalance();
-        System.out.println(balance);
-        assertThat(account.getBalance(), is(0));
-    }
+    //계정 생성 확인 테스트
 
-    @Test
-    public void shouldAddBalanceForDepositMoney(){
-        Account account = new Account();
-        account.deposit(1000);
-        System.out.println(" 예금 : " + account.getBalance());
-        assertThat(account.getBalance(), is(1000));
-    }
+    //계정 생성자에 초기 입금액 확인 테스트
 
-    @Test
-    public void shouldMinusBalanceForWithdrawMoney(){
-        Account account = new Account(2000);
-        account.withDraw(1000);
-        System.out.println(" 예금 상태 " + account.getBalance());
-        assertThat(account.getBalance(), is(1000));
-    }
+    //계정에 예금후 잔액 확인 테스트
 
-    @Test
-    public void shouldCantWithdrawWhenLessThanHaveBalanceMoney(){
-        Account account = new Account();
-        account.deposit(1000);
-        account.withDraw(1200);
-        assertThat(account.getBalance(), is(1000));
+    //계정에 출금후 잔액 확인 테스트
 
-    }
+    //계정에 잔액보다 출금액이 크면 출금되지 않고 잔액이 그대로인지 확인 테스트
 }
